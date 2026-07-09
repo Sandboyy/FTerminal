@@ -3,5 +3,5 @@ string[] docs = Directory.GetFiles(@"D:\repositoriosC#\FTerminal\Uses", "*.txt")
 
 foreach (string arq in docs)
 {
-    Console.WriteLine(Path.GetFileNameWithoutExtension(arq));
+    Console.WriteLine($">> {Path.GetFileNameWithoutExtension(arq)}");
 }
