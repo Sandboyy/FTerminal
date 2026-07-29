@@ -9,17 +9,13 @@ foreach (string arq in docs)
 
 //Adicionado rotina para leitura de arquivos, para ser utilizada no futuro
 var arquivo = @"D:\repositoriosC#\FTerminal\Uses\ultima_verificacao.txt";
-
-var stream = new FileStream(arquivo, FileMode.Open);
-
-byte[] buffer = new byte[1024];
-var bytesLidos = -1;
-var encoder = new UTF8Encoding();
-
-while (bytesLidos != 0)
+using (var stream = new FileStream(arquivo, FileMode.Open))
 {
-    bytesLidos = stream.Read(buffer, 0, 1024);
-    string texto = encoder.GetString(buffer);
-    Console.Write(texto);
+    var reader = new StreamReader(stream);
+
+    while (!reader.EndOfStream)
+    {
+        Console.WriteLine(reader.ReadLine());
+    }
 }
 //Fim da rotina de Leitura de arquivos
