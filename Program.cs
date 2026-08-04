@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using System.Text;
+using AJ.Terminal.Classes;
+
 string[] docs = Directory.GetFiles(@"D:\repositoriosC#\FTerminal\Uses", "*.txt").Select(f => Path.GetFileName(f)).ToArray();
 
 foreach (string arq in docs)
@@ -19,3 +21,7 @@ using (var stream = new FileStream(arquivo, FileMode.Open))
     }
 }
 //Fim da rotina de Leitura de arquivos
+
+//Teste da lista de palavras
+Words palavra = new Words();
+palavra.CheckPos(15);
