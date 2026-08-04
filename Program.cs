@@ -23,5 +23,9 @@ using (var stream = new FileStream(arquivo, FileMode.Open))
 //Fim da rotina de Leitura de arquivos
 
 //Teste da lista de palavras
-Words palavra = new Words();
-palavra.CheckPos(15);
+Hacking h = new Hacking();
+int opcaoCorreta = h.GenerateHackingEnviroment();
+Console.WriteLine(Words.wordSort[opcaoCorreta]);
+Console.WriteLine("Insira a senha: ");
+string senha = Console.ReadLine()!;
+h.CheckWord(opcaoCorreta, senha);

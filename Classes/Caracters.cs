@@ -1,11 +1,7 @@
 namespace AJ.Terminal.Classes;
 
-public class Caracters
+internal static class Caracters
 {
-    private List<string> CaracterSort = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
+    private static IReadOnlyList<string> CaracterSort = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
     ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-
-
-
-
 }
