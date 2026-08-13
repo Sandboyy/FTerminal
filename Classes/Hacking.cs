@@ -2,7 +2,7 @@ namespace AJ.Terminal.Classes;
 
 internal class Hacking
 {
-    public int GenerateHackingEnviroment()
+    public int GetWords()
     {
         Random rnd = new Random();
 
@@ -11,9 +11,15 @@ internal class Hacking
 
         //selecionando a palavra correta
         int rightOption = options[rnd.Next(0, options.Count)];
-        Console.WriteLine($"Opção correta {Words.wordSort[rightOption]}");
 
         return rightOption;
+    }
+
+    public void GenerateHackingEnvironment()
+    {
+        //Aqui dentro vai a geração do que será visualizado pelo usuário, a listagem dos caracteres e das palavras geradas no GetWord()
+        //Implementação consistirá em definir uma quantidade específica de caracteres(pode variar dependendo da dificuldade do hackeamento, por ora trabalhar com valor fixo)
+        //Necessário ser possível visualizar todas as opções "Embaralhadas"
     }
 
     public void CheckWord(int correctPosition, string entry)

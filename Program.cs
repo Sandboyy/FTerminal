@@ -3,28 +3,18 @@ using System.Text;
 using AJ.Terminal.Classes;
 
 string[] docs = Directory.GetFiles(@"D:\repositoriosC#\FTerminal\Uses", "*.txt").Select(f => Path.GetFileName(f)).ToArray();
+Files files = new();
 
-foreach (string arq in docs)
-{
-    Console.WriteLine($">> {Path.GetFileNameWithoutExtension(arq)}");
-}
+files.ShowFiles(docs);
+files.ReadFile();
+files.WriteFile();
 
-//Adicionado rotina para leitura de arquivos, para ser utilizada no futuro
-var arquivo = @"D:\repositoriosC#\FTerminal\Uses\ultima_verificacao.txt";
-using (var stream = new FileStream(arquivo, FileMode.Open))
-{
-    var reader = new StreamReader(stream);
 
-    while (!reader.EndOfStream)
-    {
-        Console.WriteLine(reader.ReadLine());
-    }
-}
-//Fim da rotina de Leitura de arquivos
 
 //Teste da lista de palavras
 Hacking h = new Hacking();
-int opcaoCorreta = h.GenerateHackingEnviroment();
+int opcaoCorreta = h.GetWords();
+
 Console.WriteLine(Words.wordSort[opcaoCorreta]);
 Console.WriteLine("Insira a senha: ");
 string senha = Console.ReadLine()!;
