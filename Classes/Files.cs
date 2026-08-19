@@ -4,21 +4,21 @@ internal class Files
 {
     public void ShowFiles(string[] path)
     {
-        foreach (string arq in path)
+        foreach (string arch in path)
         {
-            Console.WriteLine($">> {Path.GetFileNameWithoutExtension(arq)}");
+            Console.WriteLine($">> {Path.GetFileNameWithoutExtension(arch)}");
         }
     }
 
     public void ReadFile()
     {
         //inicialmente, manter a leitura fixa nesse arquivo
-        var arquivo = @"D:\repositoriosC#\FTerminal\Uses\ultima_verificacao.txt";
-        using (var stream = new FileStream(arquivo, FileMode.Open))
+        var path = @"D:\repositoriosC#\FTerminal\Uses\ultima_verificacao.txt";
+        using (var stream = new FileStream(path, FileMode.Open))
         {
             var reader = new StreamReader(stream);
 
-            Console.WriteLine(Path.GetFileNameWithoutExtension(arquivo));
+            Console.WriteLine(Path.GetFileNameWithoutExtension(path));
             while (!reader.EndOfStream)
             {
                 Console.WriteLine(reader.ReadLine());
