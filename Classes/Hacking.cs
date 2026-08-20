@@ -1,29 +1,29 @@
+using System.ComponentModel;
+
 namespace AJ.Terminal.Classes;
 
 internal class Hacking
 {
-    public int GetWords()
-    {
-        Random rnd = new Random();
-        //selecionando a palavra correta
-        int rightOption = rnd.Next(Words.wordSort.Count);
+    Random rnd = new Random();
 
-        return rightOption;
+    public (List<int>, int) GetWords()
+    {
+        var options = Enumerable.Range(0, Words.wordSort.Count).OrderBy(x => rnd.Next()).Take(10).ToList();
+        //selecionando a palavra correta
+        int rightOption = options[rnd.Next(options.Count)];
+
+        return (options, rightOption);
     }
 
-    public void GenerateHackingEnvironment()
+    public void GenerateHackingEnvironment(List<int> options)
     {
-        //Implementação consistirá em definir uma quantidade específica de caracteres(pode variar dependendo da dificuldade do hackeamento, por ora trabalhar com valor fixo)
-        //Necessário ser possível visualizar todas as opções "Embaralhadas"
-        Random rnd = new Random();
         int caracterType;
         int qttWordsWritten = 10;
-        var options = Enumerable.Range(0, Words.wordSort.Count).OrderBy(x => rnd.Next()).Take(9).ToList().AsReadOnly();
         int i = 0;
 
 
 
-        while (i < 384)//i = define a quantidade de caracteres eu já escrevi na tela
+        while (i < 384)
         {
             caracterType = rnd.Next(30);
             if (caracterType != 0)
@@ -33,7 +33,7 @@ internal class Hacking
             }
             else
             {
-                if (qttWordsWritten > 0)
+                if (qttWordsWritten > 0 && i <= 376)
                 {
                     int word = options[rnd.Next(options.Count)];
                     string wordToWrite = Words.wordSort[word];
@@ -43,6 +43,7 @@ internal class Hacking
                         i++;
                     }
                     qttWordsWritten--;
+                    options.Remove(word);
                 }
                 else
                 {
@@ -65,8 +66,7 @@ internal class Hacking
         while (attempts > 0)
         {
             Console.WriteLine("Insira a senha: ");
-            string entry = Console.ReadLine()!;
-            string adjustEntry = entry.ToUpper();
+            string entry = Console.ReadLine()!.ToUpper();
 
             foreach (char pos in Words.wordSort[correctPosition])
             {

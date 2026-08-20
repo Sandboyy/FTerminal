@@ -13,9 +13,12 @@ files.WriteFile();*/
 
 //Teste da lista de palavras
 Hacking h = new Hacking();
-h.GenerateHackingEnvironment();
-/*int opcaoCorreta = h.GetWords();
+var (listOptions, correctAnwser) = h.GetWords();
+Console.WriteLine($"Opcao correta: {Words.wordSort[correctAnwser]}\n\n");
+h.GenerateHackingEnvironment(listOptions);
 
-Console.WriteLine(Words.wordSort[opcaoCorreta]);
 
-h.CheckWord(opcaoCorreta);*/
+
+
+//h.GenerateHackingEnvironment();
+//h.CheckWord(opcaoCorreta);
