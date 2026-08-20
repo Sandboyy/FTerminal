@@ -17,7 +17,7 @@ internal class Hacking
         //Necessário ser possível visualizar todas as opções "Embaralhadas"
         Random rnd = new Random();
         int caracterType;
-        int wordsWritten = 10;
+        int qttWordsWritten = 10;
         var options = Enumerable.Range(0, Words.wordSort.Count).OrderBy(x => rnd.Next()).Take(9).ToList().AsReadOnly();
         int i = 0;
 
@@ -25,15 +25,15 @@ internal class Hacking
 
         while (i < 384)//i = define a quantidade de caracteres eu já escrevi na tela
         {
-            caracterType = rnd.Next(2);
-            if (caracterType == 0)
+            caracterType = rnd.Next(30);
+            if (caracterType != 0)
             {
                 Console.Write(Caracters.caracterSort[rnd.Next(Caracters.caracterSort.Count)]);
                 i++;
             }
             else
             {
-                if (wordsWritten > 0)
+                if (qttWordsWritten > 0)
                 {
                     int word = options[rnd.Next(options.Count)];
                     string wordToWrite = Words.wordSort[word];
@@ -42,7 +42,7 @@ internal class Hacking
                         Console.Write(chars);
                         i++;
                     }
-                    wordsWritten--;
+                    qttWordsWritten--;
                 }
                 else
                 {
