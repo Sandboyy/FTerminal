@@ -2,7 +2,7 @@
 using System.Text;
 using AJ.Terminal.Classes;
 
-string[] docs = Directory.GetFiles(@"D:\repositoriosC#\FTerminal\Uses", "*.txt").Select(f => Path.GetFileName(f)).ToArray();
+string[] docs = Directory.GetFiles(@"D:\repositoriosC#\FTerminal\Uses", "*.txt").Select(f => Path.GetFileName(f)).ToArray(); //Setando caminho para leitura dos arquivos, parâmetro do método GetFiles;
 Files files = new();
 
 /*files.ShowFiles(docs);
@@ -14,7 +14,7 @@ files.WriteFile();*/
 //Teste da lista de palavras
 Hacking h = new Hacking();
 var (listOptions, correctAnwser) = h.GetWords();
-Console.WriteLine($"Opcao correta: {Words.wordSort[correctAnwser]}\n\n");
+Console.WriteLine($"Opcao correta: {Words.wordSort[correctAnwser]}\n\n");//Exibindo a palavra correta para fins de testes
 h.GenerateHackingEnvironment(listOptions);
 
 

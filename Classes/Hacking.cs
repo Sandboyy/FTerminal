@@ -18,7 +18,7 @@ internal class Hacking
     public void GenerateHackingEnvironment(List<int> options)
     {
         int caracterType;
-        int qttWordsWritten = 10;
+        int qttWordsWritten = 10; //Impede que mais de 10 palavras sejam escritas
         int i = 0;
 
 
@@ -58,15 +58,15 @@ internal class Hacking
 
     public void CheckWord(int correctPosition)
     {
-        int attempts = 4;
-        int compare = 0;
-        int correctChars = 0;
-        bool success = false;
+        int attempts = 4; // Quantidade de tentativas
+        int compare = 0; // Variável que vai comparar os acertos
+        int correctChars = 0; //Variável que vai contar os caracteres corretos
+        bool success = false; // Define se foi finalizado com sucesso ou não
 
         while (attempts > 0)
         {
             Console.WriteLine("Insira a senha: ");
-            string entry = Console.ReadLine()!.ToUpper();
+            string entry = Console.ReadLine()!.ToUpper();//SERA SUBSTITUIDO PELO FRONTEND
 
             foreach (char pos in Words.wordSort[correctPosition])
             {
@@ -78,14 +78,14 @@ internal class Hacking
             }
             if (compare == Words.wordSort[correctPosition].Count())
             {
-                Console.WriteLine("Entry Accepted!!!");
+                Console.WriteLine("Entry Accepted!!!");//SERA SUBSTITUIDO PELO FRONTEND
                 success = true;
                 break;
             }
             else
             {
-                Console.WriteLine("Entry Denied");
-                Console.WriteLine($"Likeness {compare}/{Words.wordSort[correctPosition].Count()}");
+                Console.WriteLine("Entry Denied");//SERA SUBSTITUIDO PELO FRONTEND
+                Console.WriteLine($"Likeness {compare}/{Words.wordSort[correctPosition].Count()}");//SERA SUBSTITUIDO PELO FRONTEND
                 attempts--;
                 compare = 0;
                 correctChars = 0;
@@ -93,8 +93,8 @@ internal class Hacking
         }
         if (success != true)
         {
-            Console.WriteLine("TERMINAL LOCKED");
-            Console.WriteLine("PLEASE CONTACT AN ADMINISTRATOR");
+            Console.WriteLine("TERMINAL LOCKED");//SERA SUBSTITUIDO PELO FRONTEND
+            Console.WriteLine("PLEASE CONTACT AN ADMINISTRATOR");//SERA SUBSTITUIDO PELO FRONTEND
         }
 
 

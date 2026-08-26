@@ -10,9 +10,9 @@ internal class Files
         }
     }
 
-    public void ReadFile()
+    public void ReadFile() //usando StreamReader para fazer a leitura em arquivos
     {
-        //inicialmente, manter a leitura fixa nesse arquivo
+        //inicialmente, manter a leitura fixa nesse caminho
         var path = @"D:\repositoriosC#\FTerminal\Uses\ultima_verificacao.txt";
         using (var stream = new FileStream(path, FileMode.Open))
         {
@@ -27,7 +27,7 @@ internal class Files
         }
     }
 
-    public void WriteFile()
+    public void WriteFile() //usando StreamWriter para fazer a escrita em arquivos
     {
         Console.Write("Defina o nome da nova anotação: ");
         string? nameFile = Console.ReadLine();
