@@ -15,20 +15,20 @@ internal class Hacking
         return (options, rightOption);
     }
 
-    public void GenerateHackingEnvironment(List<int> options)
+    public List<char> GenerateHackingEnvironment(List<int> options)
     {
         int caracterType;
         int qttWordsWritten = 10; //Impede que mais de 10 palavras sejam escritas
         int i = 0;
 
+        List<char> finalList = new List<char>();
 
-
-        while (i < 384)
+        while (i < 384)//iniciando geração da lista de caracteres usados no hacking
         {
             caracterType = rnd.Next(30);
             if (caracterType != 0)
             {
-                Console.Write(Caracters.caracterSort[rnd.Next(Caracters.caracterSort.Count)]);
+                finalList.Add(Caracters.caracterSort[rnd.Next(Caracters.caracterSort.Count)]);
                 i++;
             }
             else
@@ -39,7 +39,7 @@ internal class Hacking
                     string wordToWrite = Words.wordSort[word];
                     foreach (var chars in wordToWrite)
                     {
-                        Console.Write(chars);
+                        finalList.Add(chars);
                         i++;
                     }
                     qttWordsWritten--;
@@ -47,13 +47,20 @@ internal class Hacking
                 }
                 else
                 {
-                    Console.Write(Caracters.caracterSort[rnd.Next(Caracters.caracterSort.Count)]);
+                    finalList.Add(Caracters.caracterSort[rnd.Next(Caracters.caracterSort.Count)]);
                     i++;
                 }
 
             }
 
         }
+        return finalList; //retorna a lista montada
+    }
+
+    public IEnumerable<char[]> GenerateListChunkLines(List<char> finaList)//método criado para gerar a lista separada por linhas
+    {
+        IEnumerable<char[]> chunks = finaList.Chunk(12);
+        return chunks;
     }
 
     public void CheckWord(int correctPosition)
@@ -99,5 +106,10 @@ internal class Hacking
 
 
 
+    }
+
+    public void CheckBracket()
+    {
+        //preencher com o método responsável por validar o brackets de caracteres especiais
     }
 }

@@ -15,7 +15,16 @@ files.WriteFile();*/
 Hacking h = new Hacking();
 var (listOptions, correctAnwser) = h.GetWords();
 Console.WriteLine($"Opcao correta: {Words.wordSort[correctAnwser]}\n\n");//Exibindo a palavra correta para fins de testes
-h.GenerateHackingEnvironment(listOptions);
+
+List<char> listaFinalTeste = h.GenerateHackingEnvironment(listOptions);
+
+foreach (char caracter in listaFinalTeste)
+{
+    Console.Write(caracter);
+}
+Console.WriteLine("\n");
+
+h.GenerateListChunkLines(listaFinalTeste);
 
 
 
