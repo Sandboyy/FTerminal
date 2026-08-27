@@ -1,44 +1,67 @@
-# Fallout Terminal
+# `ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL`
 
-A recreation of the classic terminal hacking experience from the **Fallout** series, developed in C#/.NET as a personal study project.
+```text
+╔══════════════════════════════════════════════════════════════════╗
+║           ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL               ║
+║                                                                  ║
+║  > INITIALIZING SYSTEM...                                       ║
+║  > LOADING PROJECT DATA...                                      ║
+║  > SECURITY PROTOCOL: ACTIVE                                    ║
+║  > SYSTEM STATUS: OPERATIONAL                                  ║
+║                                                                  ║
+║  PROJECT: FALLOUT TERMINAL                                      ║
+║  STATUS:  DEVELOPMENT IN PROGRESS                               ║
+╚══════════════════════════════════════════════════════════════════╝
+```
 
-The project aims to recreate the look and mechanics of the Fallout terminal hacking minigame while serving as a practical exercise in **C#, .NET, object-oriented programming, software architecture and UI development**.
+> **"War. War never changes."**
 
-> **Note:** This is an unofficial fan-made project and is not affiliated with Bethesda Game Studios or Bethesda Softworks.
+A fan-made recreation of the classic terminal hacking experience from the **Fallout** series, developed with **C#/.NET** as a personal study project.
 
----
+The project aims to reproduce the core mechanics and atmosphere of the Fallout terminal hacking minigame while providing a practical environment for studying **C#, .NET, object-oriented programming, software architecture and UI development**.
 
-## 🎯 Project Goal
-
-The final goal is to build a standalone terminal application inspired by the terminals found throughout the Fallout universe.
-
-The application will reproduce the main elements of the hacking experience, including:
-
-* Randomized password options
-* Characters used to fill the terminal screen
-* Password selection
-* **Likeness** calculation
-* Limited hacking attempts
-* Dud removal through special bracket sequences
-* Attempt restoration through bracket sequences
-* Terminal-style visual presentation
-* A graphical user interface inspired by the original Fallout terminals
-
-The project is primarily being developed for **learning purposes**, with an emphasis on writing maintainable C# code and gradually separating the application's logic from its presentation layer.
+> ⚠️ **NOTICE:** This is an unofficial fan-made project and is not affiliated with Bethesda Game Studios or Bethesda Softworks.
 
 ---
 
-## 🚧 Current Status
+## `> SYSTEM OVERVIEW`
 
-The project is currently in its **core logic development phase**.
+The final objective is to create a standalone terminal application inspired by the computer terminals found throughout the Fallout universe.
 
-The initial implementation is being developed as a console application, allowing the hacking mechanics to be tested before the graphical interface is introduced.
+The application will recreate the main elements of the hacking experience:
 
-### ✅ Already implemented
+```text
+[ SYSTEM FEATURES ]
+
+✓ RANDOMIZED PASSWORDS
+✓ TERMINAL FILLER CHARACTERS
+✓ PASSWORD SELECTION
+✓ LIKENESS CALCULATION
+✓ LIMITED HACKING ATTEMPTS
+✓ SPECIAL BRACKET SEQUENCES
+✓ DUD REMOVAL
+✓ ATTEMPT RESTORATION
+✓ TERMINAL-STYLE INTERFACE
+✓ FALLOUT-INSPIRED VISUAL PRESENTATION
+```
+
+The project is primarily being developed for **learning purposes**, with a particular focus on writing maintainable C# code and separating application logic from the presentation layer.
+
+---
+
+## `> DEVELOPMENT STATUS`
+
+**SYSTEM STATUS:** `UNDER DEVELOPMENT`
+
+The project is currently focused on implementing and testing the **core hacking mechanics**.
+
+The initial version is being developed as a console application. This allows the underlying systems to be tested before introducing the complexity of a graphical interface.
+
+### `> COMPLETED MODULES`
 
 * [x] Initial project structure
 * [x] Separation of hacking-related logic into dedicated classes
-* [x] File manipulation routines separated from the main program
+* [x] File manipulation routines
 * [x] Password collection
 * [x] Randomized password selection
 * [x] Fixed-length password generation
@@ -48,52 +71,39 @@ The initial implementation is being developed as a console application, allowing
 * [x] Password likeness comparison
 * [x] Attempt tracking
 
-### 🔨 Currently working on
+### `> ACTIVE DEVELOPMENT`
 
-* [ ] Positioning passwords within the generated terminal content
-* [ ] Improving filler character generation
+* [ ] Password positioning within terminal content
+* [ ] Filler character generation improvements
 * [ ] Special bracket sequences
 * [ ] Dud removal mechanic
 * [ ] Attempt restoration mechanic
-* [ ] Refining the terminal generation rules
-* [ ] Improving separation between application logic and user interface
+* [ ] Terminal generation rules
+* [ ] Further separation between application logic and UI
 
 ---
 
-## 🖥️ User Interface
+## `> HACKING PROTOCOL`
 
-The current version uses the **.NET Console** as a temporary interface.
+The main gameplay mechanic is inspired by the terminal hacking system introduced in **Fallout 3** and subsequently used in later Fallout titles.
 
-This approach allows the core mechanics to be developed and tested without initially introducing the complexity of a graphical framework.
+The player is presented with several possible passwords of the same length, mixed with random characters.
 
-Once the core system is stable, the project will move toward a graphical interface using either:
+Selecting an incorrect password produces a **likeness** value, representing the number of characters that match the correct password in the same position.
 
-* **WPF**
-* **Avalonia UI**
+```text
+> PASSWORD REQUIRED
+> ATTEMPTS REMAINING: 4
 
-The graphical version will focus on reproducing the characteristic terminal aesthetic of Fallout, including:
+  SECURITY
+  TERMINAL
+  DECODING
+  PROTOCOL
 
-* Monospaced terminal typography
-* Green-on-black terminal presentation
-* Hexadecimal memory addresses
-* Random ASCII characters
-* Password columns
-* Terminal messages
-* Cursor interaction
-* Visual feedback
-* CRT-inspired visual effects
+> ENTER PASSWORD:
+```
 
-The goal is to keep the hacking logic independent from the UI, allowing the same core system to be used regardless of the presentation layer.
-
----
-
-## 🧠 Hacking Mechanics
-
-The main gameplay mechanic is inspired by the terminal hacking system introduced in Fallout 3 and subsequently used in later Fallout games.
-
-The player is presented with several possible passwords of the same length, mixed with random characters. Selecting an incorrect password provides a **likeness** value indicating how many characters match the correct password in the same position.
-
-Special bracket sequences such as:
+Special character sequences are also present throughout the terminal:
 
 ```text
 (...)
@@ -102,57 +112,113 @@ Special bracket sequences such as:
 <...>
 ```
 
-can also be found among the random characters. In the original mechanic, these sequences can provide benefits such as removing an incorrect password or restoring hacking attempts.
+These sequences provide additional interactions, such as removing an incorrect password or restoring hacking attempts.
 
-The project aims to reproduce these mechanics while implementing the underlying logic independently.
+The goal of this project is to reproduce these mechanics while implementing the underlying system independently.
 
 ---
 
-## 🏗️ Project Structure
+## `> TERMINAL INTERFACE`
 
-The project is being structured to keep responsibilities separated.
-
-The main application entry point is intentionally kept lightweight, while dedicated classes are responsible for specific functionality.
-
-The current architecture follows the general idea of:
+The current interface is intentionally simple.
 
 ```text
-Program
+CURRENT INTERFACE
+────────────────────────────────────────
+
+.NET CONSOLE
+
+STATUS: FUNCTIONAL
+PURPOSE: CORE LOGIC TESTING
+
+────────────────────────────────────────
+FUTURE INTERFACE
+
+WPF / AVALONIA UI
+
+STATUS: PLANNED
+PURPOSE: FINAL TERMINAL PRESENTATION
+```
+
+The Console is being used as a temporary interface while the core systems are developed.
+
+Once the hacking mechanics are stable, the project will move toward a graphical interface using **WPF or Avalonia UI**.
+
+The final interface will aim to reproduce the characteristic Fallout terminal aesthetic:
+
+* Monospaced terminal typography
+* Green-on-black presentation
+* Hexadecimal memory addresses
+* Random ASCII characters
+* Password columns
+* Terminal system messages
+* Cursor interaction
+* Visual feedback
+* CRT-inspired effects
+* Boot and shutdown sequences
+
+The architecture is being designed so that the hacking logic remains independent from the interface.
+
+This should allow the same core system to be used with either a Console or graphical UI.
+
+---
+
+## `> SYSTEM ARCHITECTURE`
+
+The project is being structured around separation of responsibilities.
+
+The main application entry point is intentionally kept lightweight, while dedicated classes handle specific functionality.
+
+Current conceptual structure:
+
+```text
+FalloutTerminal
 │
-├── Hacking Logic
+├── Program
+│
+├── Hacking
 │   ├── Password generation
 │   ├── Terminal generation
 │   ├── Likeness calculation
 │   └── Hacking mechanics
 │
 └── File Management
-    ├── Reading files
-    └── Managing word collections
+    ├── Word collection
+    └── File operations
 ```
 
-As development progresses, the project will further separate the **application logic** from the **presentation layer**, making the eventual migration from Console to WPF/Avalonia easier.
+As development progresses, the project will further separate the **application logic** from the **presentation layer**.
+
+The long-term objective is to allow the terminal interface to be replaced without requiring major changes to the underlying hacking system.
 
 ---
 
-## 🛠️ Technologies
+## `> TECHNOLOGY STACK`
 
-* **C#**
-* **.NET**
-* Console Application
-* Object-Oriented Programming
-* File I/O
+### Current
+
+```text
+LANGUAGE        C#
+FRAMEWORK       .NET
+INTERFACE       Console
+PARADIGM        Object-Oriented Programming
+STORAGE         File I/O
+```
 
 ### Planned
 
-* **WPF or Avalonia UI**
-* Improved UI architecture
-* Terminal visual effects
+```text
+UI              WPF / Avalonia UI
+ARCHITECTURE    UI / Logic separation
+VISUALS         CRT-inspired terminal effects
+AUDIO           Terminal sound effects
+```
 
 ---
 
-## 📌 Roadmap
+## `> DEVELOPMENT ROADMAP`
 
-### Core
+### `CORE SYSTEM`
 
 * [x] Project foundation
 * [x] Word management
@@ -162,60 +228,97 @@ As development progresses, the project will further separate the **application l
 * [ ] Complete bracket mechanics
 * [ ] Complete hacking flow
 * [ ] Improve terminal generation
+* [ ] Refine game rules
 
-### Interface
+### `GRAPHICAL INTERFACE`
 
 * [ ] Define UI architecture
+* [ ] Select WPF or Avalonia
 * [ ] Create graphical terminal interface
 * [ ] Recreate Fallout-inspired terminal layout
 * [ ] Add animations and visual feedback
 * [ ] Add CRT-inspired effects
 * [ ] Replace Console input/output
 
-### Future
+### `FUTURE SYSTEMS`
 
 * [ ] Terminal difficulty levels
 * [ ] Configurable word pools
 * [ ] Configurable terminal themes
 * [ ] Sound effects
 * [ ] Boot sequence
+* [ ] Shutdown sequence
 * [ ] Additional terminal interactions
 * [ ] Physical terminal integration
 
 ---
 
-## 📚 Purpose
+## `> PROJECT OBJECTIVE`
 
 This project is being developed primarily as a **learning exercise**.
 
-The main objectives are to practice:
+The main objectives are to gain practical experience with:
 
-* C# and .NET
-* Object-oriented programming
-* Code organization
-* Separation of responsibilities
-* File manipulation
-* Randomization and procedural generation
-* User interaction
-* UI development
-* Software architecture
+```text
+C# / .NET
+    ↓
+Object-Oriented Programming
+    ↓
+Code Organization
+    ↓
+Separation of Responsibilities
+    ↓
+File Manipulation
+    ↓
+Randomization & Procedural Generation
+    ↓
+User Interaction
+    ↓
+UI Development
+    ↓
+Software Architecture
+```
 
-The Fallout terminal concept provides a practical and enjoyable way to apply these concepts to a project that can eventually become a physical interactive terminal.
+The Fallout terminal concept provides a practical and enjoyable way to apply these concepts to a project that can eventually become a **physical interactive terminal**.
 
 ---
 
-## ⚠️ Disclaimer
+## `> PROJECT STATUS`
+
+```text
+╔════════════════════════════════════════════════════╗
+║                                                    ║
+║  PROJECT STATUS                                    ║
+║                                                    ║
+║  CORE SYSTEM       ███████████░░░░░░░░             ║
+║  GRAPHICAL UI      ░░░░░░░░░░░░░░░░░░░░             ║
+║  PHYSICAL BUILD    ░░░░░░░░░░░░░░░░░░░░             ║
+║                                                    ║
+║  STATUS: IN DEVELOPMENT                            ║
+║                                                    ║
+╚════════════════════════════════════════════════════╝
+```
+
+The current development focus is completing the core hacking mechanics before moving on to the graphical terminal interface.
+
+---
+
+## `> DISCLAIMER`
 
 This is an **unofficial fan project** created for educational and personal purposes.
 
-Fallout and its related intellectual property belong to their respective owners, including Bethesda Softworks and Bethesda Game Studios.
+**Fallout** and its related intellectual property belong to their respective owners, including Bethesda Softworks and Bethesda Game Studios.
 
 This project is not affiliated with, endorsed by, or sponsored by Bethesda.
 
 ---
 
-## 🚀 Project Status
+```text
+ROBCO INDUSTRIES (TM)
 
-**Development:** 🟡 In Progress
+TERMLINK PROTOCOL TERMINATED.
 
-The project is currently focused on completing the core hacking mechanics before moving on to the graphical interface.
+> THANK YOU FOR USING ROBCO INDUSTRIES AUTOMATED TERMINAL SERVICES.
+
+> GOODBYE.
+```
